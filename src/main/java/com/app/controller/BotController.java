@@ -2,7 +2,7 @@ package com.app.controller;
 
 import com.app.model.request.BotRequest;
 import com.app.model.response.ChatGptResponse;
-import com.app.service.BotServiceImpl;
+import com.app.service.BotService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class BotController {
 
-    private final BotServiceImpl botService;
+    private final BotService botService;
 
     @PostMapping("/send")
     public ChatGptResponse sendMessage(@RequestBody BotRequest botRequest) {
